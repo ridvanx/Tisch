@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getränke Counter</title>
+    <link rel="stylesheet" href="/HW1/Tisch/style.css">
+</head>
+<body>
+
+<h2>Getränke Counter</h2>
+
+<div class="table-select" style="margin-bottom:15px;">
+    <strong>Tisch Wählen:</strong>
+    <label>
+        <input type="radio" name="table" value="1" checked onchange="loadCounts()"> Tisch 1(Wird bezahlt)
+    </label>
+    <label>
+        <input type="radio" name="table" value="2" onchange="loadCounts()"> Tisch 2(Eingeladen)
+    </label>
+    <label>
+        <input type="radio" name="table" value="3" onchange="loadCounts()"> Tisch 3(Ersatz)
+    </label>
+</div>
+
+<table>
+    <tr>
+        <th>Getränk</th>
+        <th>Stück</th>
+        <th>+ / −</th>
+    </tr>
+
+    <tr>
+        <td>Cola</td>
+        <td><span id="Cola">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('Cola', -1)">−</button>
+            <button class="btn plus" onclick="update('Cola', 1)">+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Fanta</td>
+        <td><span id="Fanta">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('Fanta', -1)">−</button>
+            <button class="btn plus" onclick="update('Fanta', 1)">+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Cola Zero</td>
+        <td><span id="ColaZero">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('ColaZero', -1)">−</button>
+            <button class="btn plus" onclick="update('ColaZero', 1)">+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Apfelschorle</td>
+        <td><span id="Apfelschorle">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('Apfelschorle', -1)">−</button>
+            <button class="btn plus" onclick="update('Apfelschorle', 1)">+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Orangensaft</td>
+        <td><span id="OrangenSaft">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('OrangenSaft', -1)">−</button>
+            <button class="btn plus" onclick="update('OrangenSaft', 1)">+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Apfelsaft</td>
+        <td><span id="ApfelSaft">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('ApfelSaft', -1)">−</button>
+            <button class="btn plus" onclick="update('ApfelSaft', 1)">+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Wasser (Naturell)</td>
+        <td><span id="WasserNatural">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('WasserNatural', -1)">−</button>
+            <button class="btn plus" onclick="update('WasserNatural', 1)">+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Wasser (Classic)</td>
+        <td><span id="WasserClassic">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('WasserClassic', -1)">−</button>
+            <button class="btn plus" onclick="update('WasserClassic', 1)">+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Bitter Lemon</td>
+        <td><span id="BitterLemon">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('BitterLemon', -1)">−</button>
+            <button class="btn plus" onclick="update('BitterLemon', 1)">+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Tonic Wasser</td>
+        <td><span id="TonicWasser">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('TonicWasser', -1)">−</button>
+            <button class="btn plus" onclick="update('TonicWasser', 1)">+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Latte</td>
+        <td><span id="Latte">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('Latte', -1)">−</button>
+            <button class="btn plus" onclick="update('Latte', 1)">+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Cappuccino</td>
+        <td><span id="Cappuccino">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('Cappuccino', -1)">−</button>
+            <button class="btn plus" onclick="update('Cappuccino', 1)">+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Kaffee</td>
+        <td><span id="Kaffee">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('Kaffee', -1)">−</button>
+            <button class="btn plus" onclick="update('Kaffee', 1)">+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Espresso</td>
+        <td><span id="Espresso">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('Espresso', -1)">−</button>
+            <button class="btn plus" onclick="update('Espresso', 1)">+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Bitburger</td>
+        <td><span id="Bitburger">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('Bitburger', -1)">−</button>
+            <button class="btn plus" onclick="update('Bitburger', 1)">+</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Bitburger(Alkoholfreies)</td>
+        <td><span id="A.freiBitburger">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('A.freiBitburger', -1)">−</button>
+            <button class="btn plus" onclick="update('A.freiBitburger', 1)">+</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Weizen</td>
+        <td><span id="Weizen">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('Weizen', -1)">−</button>
+            <button class="btn plus" onclick="update('Weizen', 1)">+</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Weizen(Alkoholfreies)</td>
+        <td><span id="WeizenAfrei">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('WeizenAfrei', -1)">−</button>
+            <button class="btn plus" onclick="update('WeizenAfrei', 1)">+</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Redbull</td>
+        <td><span id="Redbull">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('Redbull', -1)">−</button>
+            <button class="btn plus" onclick="update('Redbull', 1)">+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Tee</td>
+        <td><span id="Tee">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('Tee', -1)">−</button>
+            <button class="btn plus" onclick="update('Tee', 1)">+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Kakao</td>
+        <td><span id="Kakao">0</span></td>
+        <td>
+            <button class="btn minus" onclick="update('Kakao', -1)">−</button>
+            <button class="btn plus" onclick="update('Kakao', 1)">+</button>
+        </td>
+    </tr>
+
+</table>
+<br>
+<div style="margin:20px;">
+    <button class="reset" onclick="resetActiveTisch()">
+        🔄 Reset Ausgewählte Tisch
+    </button>
+
+    <button class="reset" onclick="resetAlleTischen()" style="margin-left:20px;">
+        ❌ Reset Beide Tischen
+    </button>
+</div>
+
+
+<script src="/HW1/Tisch/app.js"></script>
+
+</body>
+</html>
