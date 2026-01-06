@@ -7,6 +7,7 @@ body {
 
 h2 {
     margin: 15px 0;
+    font-size: clamp(18px, 4vw, 28px);
 }
 
 .table-select {
@@ -26,17 +27,16 @@ h2 {
 
 table {
     border-collapse: collapse;
-    width: 100%;       
-    max-width: 100%;
+    width: 95%;
     margin: 10px auto;
-    font-size: 22px;   
+    font-size: clamp(14px, 4vw, 22px);
     font-weight: bold;
     background-color: white;
 }
 
 th, td {
     border: 1px solid #333;
-    padding: 0.8rem;   
+    padding: clamp(6px, 2vw, 12px);
     text-align: center;
 }
 
@@ -46,13 +46,14 @@ button {
 }
 
 .btn {
-    width: 50px;       
-    height: 50px;      
-    font-size: 24px;   
+    width: clamp(35px, 10vw, 50px);
+    height: clamp(35px, 10vw, 50px);
+    font-size: clamp(16px, 5vw, 24px);
     font-weight: bold;
     border-radius: 10px;
-    margin: 0 10px;
+    margin: 0 5px;
 }
+
 
 .plus {
     background-color: #2ecc71;
@@ -75,40 +76,37 @@ button {
 
 @media (max-width: 768px) {
     table, thead, tbody, tr, th, td {
-        display: block;
+        display: table; /* blok yerine tablo bırak */
     }
 
     tr {
-        margin-bottom: 1rem;
-        border: 2px solid #ccc;
-        border-radius: 10px;
-        padding: 10px;
+        margin-bottom: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
     }
 
     th {
-        display: none;
+        font-size: clamp(12px, 3vw, 16px);
     }
 
     td {
-        text-align: center;
-        border: none;
-        padding: 8px 0;
+        font-size: clamp(12px, 3vw, 16px);
+        padding: 5px;
     }
 
     .btn {
-        width: 40px;    
-        height: 40px;
-        font-size: 20px;
-        margin: 5px;
+        width: clamp(30px, 15vw, 40px);
+        height: clamp(30px, 15vw, 40px);
+        font-size: clamp(14px, 5vw, 20px);
+        margin: 3px;
     }
 
     .reset {
-        width: 90%;
-        font-size: 16px;
+        width: 80%;
+        font-size: clamp(14px, 4vw, 18px);
         padding: 8px 0;
-    }
-
-    table {
-        font-size: 18px; 
+        margin: 15px auto;
     }
 }
+
