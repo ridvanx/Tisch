@@ -48,7 +48,7 @@ function resetAlleTischen() {
     drinks.forEach(drink => {
         localStorage.setItem(`tisch1_${drink}`, 0);
         localStorage.setItem(`tisch2_${drink}`, 0);
-
+        localStorage.setItem(`tisch3_${drink}`, 0);
         const el = document.getElementById(drink);
         if (el) el.innerText = 0;
     });
